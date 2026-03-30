@@ -354,7 +354,7 @@ const AuthModal = ({ onClose, showToast }) => {
     <div className="overlay" onClick={onClose}>
       <div className="auth-box" onClick={e => e.stopPropagation()}>
         <div className="auth-head">
-          <h2>🗺️ CommunityAtlas</h2>
+          <h2> CommunityAtlas</h2>
           <p>{tab === "login" ? "Sign in to manage your service listings" : "Create your account"}</p>
         </div>
         <div className="auth-body">
@@ -547,7 +547,7 @@ function AppInner() {
       {/* ── NAV ── */}
       <nav className="nav">
         <div className="logo" onClick={() => setPage("home")}>
-          <div className="logo-icon">🗺️</div>
+          <div className="logo-icon"></div>
           <div className="logo-text">Community<span>Atlas</span></div>
         </div>
         <div className="nav-links">
@@ -628,7 +628,7 @@ function AppInner() {
           </div>
           <div className="map-wrap">
             <div className="map-bar">
-              <span>🗺️ Gasabo Sector — Service Locations</span>
+              <span> Gasabo Sector — Service Locations</span>
               <span style={{ fontSize: ".8rem", color: "var(--light)" }}>Click a pin to view details</span>
             </div>
             <div className="map-area">

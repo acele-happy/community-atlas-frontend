@@ -93,7 +93,7 @@ const AuthProvider = ({ children }) => {
 // ─────────────────────────────────────────────────────────────────────────────
 const CATEGORIES = ["All", "Health", "Education", "Business", "Organization"];
 const COLORS = { Health: "#2D6A4F", Education: "#52B788", Business: "#D4A017", Organization: "#E07A5F" };
-const ICONS  = { Health: "🏥", Education: "📚", Business: "🛍️", Organization: "🤝" };
+const ICONS  = { Health: "", Education: "", Business: "", Organization: "" };
 
 const STATUS_STYLE = {
   approved: { bg: "#E8F5E9", color: "#2D6A4F", icon: "✅" },
@@ -564,7 +564,7 @@ function AppInner() {
       {page === "home" && (
         <>
           <div className="hero">
-            <div className="hero-badge">🌍 Gasabo District, Rwanda</div>
+            <div className="hero-badge">🌍 Gasabo District, Kigali</div>
             <h1 className="hero-title">Find Local Services<br /><em>Built by your community</em></h1>
             <p className="hero-sub">Discover health centers, schools, local businesses, and community organizations near you.</p>
             <div className="search-bar">
@@ -586,7 +586,7 @@ function AppInner() {
           <div className="container">
             {!user && (
               <div className="banner">
-                <p>🔒 <strong>Service Providers:</strong> Sign in to list your service and reach the community.</p>
+                <p><strong>Service Providers:</strong> Sign in to list your service and reach the community.</p>
                 <button onClick={() => setShowAuth(true)}>Sign In / Register</button>
               </div>
             )}

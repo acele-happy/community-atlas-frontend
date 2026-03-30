@@ -94,7 +94,7 @@ const AuthProvider = ({ children }) => {
 // ─────────────────────────────────────────────────────────────────────────────
 const CATEGORIES = ["All", "Health", "Education", "Business", "Organization"];
 const COLORS = { Health: "#2D6A4F", Education: "#52B788", Business: "#D4A017", Organization: "#E07A5F" };
-const ICONS  = { Health: "", Education: "", Business: "", Organization: "" };
+const ICONS  = { Health:"", Education: "", Business: "", Organization: "" };
 
 const STATUS_STYLE = {
   approved: { bg: "#E8F5E9", color: "#2D6A4F", icon: "✅" },

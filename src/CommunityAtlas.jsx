@@ -1,5 +1,6 @@
 import { useState, useEffect, createContext, useContext, useMemo } from "react";
 import axios from "axios";
+import { CiSearch } from "react-icons/ci";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // AXIOS INSTANCE
@@ -602,7 +603,7 @@ function AppInner() {
             {fetching
               ? <div className="centered"><Spinner dark /></div>
               : <div className="grid">
-                  {services.length === 0 && <div className="empty"><div className="empty-icon">🔍</div><h3>No services found</h3><p>Try a different filter or search term</p></div>}
+                  {services.length === 0 && <div className="empty"><div className="empty-icon"><CiSearch /></div><h3>No services found</h3><p>Try a different filter or search term</p></div>}
                   {services.map(s => <ServiceCard key={s._id} s={s} onClick={setPicked} />)}
                 </div>
             }

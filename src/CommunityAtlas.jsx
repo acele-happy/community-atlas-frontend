@@ -8,7 +8,7 @@ import axios from "axios";
 // to every request so you never have to pass the token manually.
 // ─────────────────────────────────────────────────────────────────────────────
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://community-atlas-backend-4a9r.onrender.com/api",
   headers: { "Content-Type": "application/json" },
 });
 

@@ -1,6 +1,6 @@
 import { useState, useEffect, createContext, useContext, useMemo } from "react";
 import axios from "axios";
-import { CiSearch } from "react-icons/ci";
+import { CiSearch,CiTrash } from "react-icons/ci";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // AXIOS INSTANCE
@@ -505,17 +505,23 @@ function AppInner() {
   // ── Admin actions ───────────────────────────────────────────────────────
   const approve = async (id, name) => {
     const res = await axiosInstance.put(`/admin/services/${id}/approve`, { note: "Approved" });
-    if (res.success) { showToast(`✅ "${name}" approved`); loadAdmin(); loadServices(); }
+    if (res.success) { showToast(`"${name}" approved`); loadAdmin(); loadServices(); }
     else showToast("❌ " + res.message);
   };
   const reject = async (id, name) => {
     const res = await axiosInstance.put(`/admin/services/${id}/reject`, { note: "Does not meet guidelines" });
-    if (res.success) { showToast(`🚫 "${name}" rejected`); loadAdmin(); }
+    if (res.success) { showToast(`"${name}" rejected`); loadAdmin(); }
     else showToast("❌ " + res.message);
   };
   const remove = async (id, name) => {
     const res = await axiosInstance.delete(`/admin/services/${id}`);
-    if (res.success) { showToast(`🗑️ "${name}" deleted`); loadAdmin(); }
+    if (res.success) { showToast(
+    <span>
+      <CiTrash style={{ marginRight: "6px" }} />
+      "{name}" deleted
+    </span>
+  );
+  loadAdmin(); }
     else showToast("❌ " + res.message);
   };
 

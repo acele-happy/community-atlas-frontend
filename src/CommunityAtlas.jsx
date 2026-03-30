@@ -92,9 +92,9 @@ const AuthProvider = ({ children }) => {
 // ─────────────────────────────────────────────────────────────────────────────
 // CONSTANTS
 // ─────────────────────────────────────────────────────────────────────────────
-const CATEGORIES = ["All", "Health", "Education", "Business", "Organization"];
-const COLORS = { Health: "#2D6A4F", Education: "#52B788", Business: "#D4A017", Organization: "#E07A5F" };
-const ICONS  = { Health:"", Education: "", Business: "", Organization: "" };
+const CATEGORIES = ["All", "Health", "Education", "Business", "Entertainment"];
+const COLORS = { Health: "#2D6A4F", Education: "#52B788", Business: "#D4A017", Entertainment: "#E07A5F" };
+const ICONS  = { Health:"", Education: "", Business: "", Entertainment: "" };
 
 const STATUS_STYLE = {
   approved: { bg: "#E8F5E9", color: "#2D6A4F", icon: "✅" },
@@ -139,8 +139,8 @@ const styles = `
   .hero { background:var(--forest); overflow:hidden; padding:80px 2rem 100px; text-align:center; position:relative; }
   .hero::before { content:''; position:absolute; top:-60px; right:-80px; width:400px; height:400px; background:radial-gradient(circle, rgba(82,183,136,.15), transparent 70%); border-radius:50%; }
   .hero-badge { display:inline-block; background:rgba(82,183,136,.2); color:var(--leaf); border:1px solid rgba(82,183,136,.3); border-radius:20px; padding:6px 16px; font-size:.8rem; font-weight:600; letter-spacing:1px; text-transform:uppercase; margin-bottom:24px; }
-  .hero-title { font-family:'Playfair Display',serif; font-size:clamp(2.4rem,5vw,3.8rem); font-weight:700; color:var(--sand); line-height:1.15; margin-bottom:20px; position:relative; z-index:1; }
-  .hero-title em { font-style:italic; color:var(--leaf); }
+  .hero-title {font-size:clamp(2.4rem,5vw,3.8rem); font-weight:700; color:var(--sand); line-height:1.15; margin-bottom:20px; position:relative; z-index:1; }
+  .hero-title em { color:var(--leaf); }
   .hero-sub { color:var(--mint); font-size:1.05rem; font-weight:300; max-width:520px; margin:0 auto 40px; line-height:1.7; position:relative; z-index:1; }
   .search-bar { display:flex; max-width:520px; margin:0 auto 40px; background:white; border-radius:12px; overflow:hidden; box-shadow:0 8px 32px rgba(0,0,0,.3); position:relative; z-index:1; }
   .search-bar input { flex:1; padding:16px 20px; border:none; outline:none; font-family:'DM Sans',sans-serif; font-size:.95rem; color:var(--ink); }
@@ -571,7 +571,7 @@ function AppInner() {
       {page === "home" && (
         <>
           <div className="hero">
-            <div className="hero-badge">🌍 Gasabo District, Kigali</div>
+            <div className="hero-badge">Gasabo District, Kigali</div>
             <h1 className="hero-title">Find Local Services<br /><em>Built by your community</em></h1>
             <p className="hero-sub">Discover health centers, schools, local businesses, and community organizations near you.</p>
             <div className="search-bar">
@@ -688,7 +688,7 @@ function AppInner() {
                     <h3>Service Details</h3>
                     <div className="form-2row">
                       <div className="f-field"><label>Service Name *</label><input placeholder="e.g. Kigali Dental Clinic" value={form.name} onChange={e => setForm(p => ({ ...p, name: e.target.value }))} /></div>
-                      <div className="f-field"><label>Category *</label><select value={form.category} onChange={e => setForm(p => ({ ...p, category: e.target.value }))}><option>Health</option><option>Education</option><option>Business</option><option>Organization</option></select></div>
+                      <div className="f-field"><label>Category *</label><select value={form.category} onChange={e => setForm(p => ({ ...p, category: e.target.value }))}><option>Health</option><option>Education</option><option>Business</option><option>Entertainment</option></select></div>
                       <div className="f-field"><label>Address *</label><input placeholder="e.g. Remera, Gasabo" value={form.address} onChange={e => setForm(p => ({ ...p, address: e.target.value }))} /></div>
                       <div className="f-field"><label>Sector</label><input placeholder="e.g. Remera" value={form.sector} onChange={e => setForm(p => ({ ...p, sector: e.target.value }))} /></div>
                       <div className="f-field"><label>Phone</label><input placeholder="+250 7XX XXX XXX" value={form.phone} onChange={e => setForm(p => ({ ...p, phone: e.target.value }))} /></div>
